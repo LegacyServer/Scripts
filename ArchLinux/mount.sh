@@ -35,3 +35,11 @@ done
 
 usermod -a -G builders jenkins
 chown jenkins:builders /home/ccache
+systemctl restart httpd
+systemctl restart jenkins
+cpupower frequency-set -g performance
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+cd /home/gerrit2
+./bin/gerrit.sh start
+exit
+cd
