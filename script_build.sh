@@ -4,11 +4,12 @@
 # cd rom_repo
 # curl https://raw.githubusercontent.com/LegacyServer/Scripts/master/script_build.sh > script_build.sh
 
-# Some User's Details. Please fill it by your own details.
-# Replace "legacy" with your own SSH Username in lowercase
-username=legacy
+# Some User's Details. Please fill it with your own details.
 
-# colors
+# Replace "legacy" with your own SSH Username in lowercase
+username=legacy1
+
+# Colors makes things beautiful
 export TERM=xterm
 
     red=$(tput setaf 1)             #  red
@@ -16,7 +17,8 @@ export TERM=xterm
     blu=$(tput setaf 4)             #  blue
     cya=$(tput setaf 6)             #  cyan
     txtrst=$(tput sgr0)             #  Reset
-# ccache
+
+# CCACHE UMMM!!! Cooks my builds fast
 
 if [ "$use_ccache" = "yes" ];
 then
@@ -34,7 +36,7 @@ wait
 echo -e ${grn}"CCACHE Cleared"${txtrst};
 fi
 
-# clean
+# Its Clean Time
 if [ "$make_clean" = "yes" ];
 then
 make clean && make clobber
@@ -42,8 +44,7 @@ wait
 echo -e ${cya}"OUT dir from your repo deleted"${txtrst};
 fi
 
-
-# build
+# Build ROM
 . build/envsetup.sh
-lunch lineage_$device-userdebug
-make $target_command -j8
+lunch "$lunch_command"_"$device"-userdebug
+make "$target_command" -j8
