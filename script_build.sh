@@ -7,7 +7,7 @@
 # Some User's Details. Please fill it with your own details.
 
 # Replace "legacy" with your own SSH Username in lowercase
-username=legacy1
+username=legacy
 
 # Colors makes things beautiful
 export TERM=xterm
