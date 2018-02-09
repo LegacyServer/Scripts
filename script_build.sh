@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This Script needs one change from the users and have some instructions how to use it, so please do read first 10 Lines of the Script.
+
 # Clone this script in your ROM Repo using following commands.
 # cd rom_repo
 # curl https://raw.githubusercontent.com/LegacyServer/Scripts/master/script_build.sh > script_build.sh
@@ -8,6 +10,13 @@
 
 # Replace "legacy" with your own SSH Username in lowercase
 username=legacy
+
+# Assign values to parameters used in Script from Jenkins Job parameters
+use_ccache="$1"
+make_clean="$2"
+lunch_command="$3"
+device="$4"
+target_command="$5"
 
 # Colors makes things beautiful
 export TERM=xterm
