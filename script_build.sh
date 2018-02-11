@@ -41,6 +41,8 @@ if [ "$use_ccache" = "clean" ];
 then
 export CCACHE_DIR=/home/ccache/$username
 ccache -C
+export USE_CCACHE=1
+prebuilts/misc/linux-x86/ccache/ccache -M 50G
 wait
 echo -e ${grn}"CCACHE Cleared"${txtrst};
 fi
