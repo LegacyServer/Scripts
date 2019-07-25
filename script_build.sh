@@ -15,8 +15,9 @@ username=legacy
 use_ccache="$1"
 make_clean="$2"
 lunch_command="$3"
-device="$4"
+device_codename="$4"
 target_command="$5"
+build_type="$6"
 
 # Colors makes things beautiful
 export TERM=xterm
@@ -57,5 +58,5 @@ fi
 
 # Build ROM
 . build/envsetup.sh
-lunch "$lunch_command"_"$device"-userdebug
+lunch "$lunch_command"_"$device_codename"-"$build_type"
 make "$target_command" -j8
