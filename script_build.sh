@@ -28,7 +28,7 @@ echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 export CCACHE_DIR=/home/ccache/$username
-ccache -M 75G
+ccache -M 100G
 fi
 
 if [ "$use_ccache" = "clean" ];
@@ -37,7 +37,7 @@ export CCACHE_EXEC=$(which ccache)
 export CCACHE_DIR=/home/ccache/$username
 ccache -C
 export USE_CCACHE=1
-ccache -M 75G
+ccache -M 100G
 wait
 echo -e ${grn}"CCACHE Cleared"${txtrst};
 fi
